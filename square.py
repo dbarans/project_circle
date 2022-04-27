@@ -19,7 +19,13 @@ class Square:
         return self.side <= other.side
 
     def __add__(self, other):
-        return self.area + other.area
+        if self.__class__ == other.__class__:
+            return self.area + other.area
+        else:
+            new_area = self.area + other.area
+            new_side = new_area ** (1 / 2)
+
+            return Square(new_side)
 
     @property
     def side(self):
