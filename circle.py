@@ -1,4 +1,5 @@
 from math import pi
+from square import Square
 
 
 class Circle:
@@ -26,7 +27,13 @@ class Circle:
         return self.radius <= other.radius
 
     def __add__(self, other):
-        return self.area + other.area
+        if self.__class__ == other.__class__:
+            return self.area + other.area
+        else:
+            new_area = self.area + other.area
+            new_radius = (new_area / pi) ** (1 / 2)
+            ob = Circle(new_radius)
+            return ob
 
     @property
     def radius(self):
