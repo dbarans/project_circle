@@ -10,6 +10,21 @@ class Circle:
     def __repr__(self):
         return f"Circle ({self._radius})"
 
+    def __eq__(self, other):
+        return self._radius == other._radius
+
+    def __gt__(self, other):
+        return self._radius > other._radius
+
+    def __lt__(self, other):
+        return self._radius < other._radius
+
+    def __ge__(self, other):
+        return self._radius >= other._radius
+
+    def __le__(self, other):
+        return self._radius <= other._radius
+
     @property
     def radius(self):
         return self._radius
