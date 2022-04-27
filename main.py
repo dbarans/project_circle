@@ -4,26 +4,29 @@ from math import pi
 class Circle:
     def __init__(self, radius=1):
         self._radius = radius
-        self._diameter = 2 * self._radius
-        self._area = pi * self._radius ** 2
+        self._diameter = 2 * self.radius
+        self._area = pi * self.radius ** 2
 
     def __repr__(self):
-        return f"Circle ({self._radius})"
+        return f"Circle ({self.radius})"
 
     def __eq__(self, other):
-        return self._radius == other._radius
+        return self.radius == other.radius
 
     def __gt__(self, other):
-        return self._radius > other._radius
+        return self.radius > other.radius
 
     def __lt__(self, other):
-        return self._radius < other._radius
+        return self.radius < other.radius
 
     def __ge__(self, other):
-        return self._radius >= other._radius
+        return self.radius >= other.radius
 
     def __le__(self, other):
-        return self._radius <= other._radius
+        return self.radius <= other.radius
+
+    def __add__(self, other):
+        return self.area + other.area
 
     @property
     def radius(self):
