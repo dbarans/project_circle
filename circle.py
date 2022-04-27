@@ -32,8 +32,7 @@ class Circle:
         else:
             new_area = self.area + other.area
             new_radius = (new_area / pi) ** (1 / 2)
-            ob = Circle(new_radius)
-            return ob
+            return Circle(new_radius)
 
     @property
     def radius(self):
