@@ -3,6 +3,9 @@ class Square:
         self._side = side
         self._area = side ** 2
 
+    def __repr__(self):
+        return f"Square ({self.side})"
+
     def __eq__(self, other):
         return self.side == other.side
 
@@ -24,7 +27,6 @@ class Square:
         else:
             new_area = self.area + other.area
             new_side = new_area ** (1 / 2)
-
             return Square(new_side)
 
     @property
